@@ -1,0 +1,18 @@
+[ 2023-06-26 20:49:20,105 ] 27 root - INFO -data ingestion started
+[ 2023-06-26 20:49:20,106 ] 29 root - INFO -Retriving MongoDB client details
+[ 2023-06-26 20:49:20,739 ] 16 root - INFO -mongo db connection initiated
+[ 2023-06-26 20:49:20,739 ] 32 root - INFO -Data is extracting from MongoDB
+[ 2023-06-26 20:49:22,453 ] 36 root - INFO -Extracted data is available in artifacts\raw.csv
+[ 2023-06-26 20:49:22,453 ] 40 root - INFO -splitting dataset into test and train initiated
+[ 2023-06-26 20:49:22,465 ] 51 root - INFO -data ingestion completed
+[ 2023-06-26 20:49:22,465 ] 55 root - INFO -writing train,test and dataframe to next step i.e data transformation
+[ 2023-06-26 20:49:22,478 ] 65 root - INFO -Reading train and test data completed
+[ 2023-06-26 20:49:22,479 ] 71 root - INFO -getting preprocessor object
+[ 2023-06-26 20:49:22,479 ] 28 root - INFO -numerical columns from dataset['Age', 'BP', 'Cholesterol', 'Max_HR', 'ST_depression', 'Number_of_vessels_fluro']
+[ 2023-06-26 20:49:22,479 ] 33 root - INFO -categorical columns from dataset['Sex', 'chest_pain_type', 'FBS_over_120', 'EKG_results', 'Exercise_angina', 'Slope_of_ST', 'Thallium']
+[ 2023-06-26 20:49:22,479 ] 74 root - INFO -removing target column and excess column from train data
+[ 2023-06-26 20:49:22,481 ] 78 root - INFO -removing target column and excess column from test data
+[ 2023-06-26 20:49:22,482 ] 84 root - INFO -applying preprocessing object on training dataframe and testing dataframe
+[ 2023-06-26 20:49:22,517 ] 96 root - INFO -saving preprocessing object
+[ 2023-06-26 20:49:22,530 ] 28 root - INFO -initiating model training
+[ 2023-06-26 20:49:22,567 ] 107 root - INFO -best found model on both training and testing dataset:  Logistic Regressor

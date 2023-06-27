@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <style> 
+        input[type=button], input[type=submit], input[type=reset] {
+          background-color: #04AA6D;
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        h1{text-align: center;}
+        div {
+            text-align: center;
+            font-size: 25px;
+            font-style: italic;
+            color: red;
+        }
+            body{
+                background-color:#D3D3D3 ;
+                background-image:url('https://cdn.pixabay.com/photo/2018/10/02/20/36/electrocardiogram-3719883_1280.jpg') ;
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+            }
+            label{
+                font-weight: bold;
+                color: black;
+            }
+            
+        </style>
+        </head>
+    <body>
+        <div class="login">
+            <h1>Heart Disease Detector</h1>
+
+            <form action="{{url_for('predict_datapoint')}}" method="post">
+                <div class="mb-3"><br>
+                    <label class="from-label">Age</label>
+                    <input class="from-control" type="number" name="Age"
+                    placeholder="Enter your Age" min="0" max="100" />
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">Sex</label>
+                    <select class="from-control" name="Sex" placeholder="Enter your Gender" required>
+                        <option value="male">
+                            male
+                        </option>
+                        <option value="Female">
+                            Female
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">chest pain type</label>
+                    <select class="from-control" name="chest_pain_type" placeholder="Choose Type of chest pain" required>
+                        <option class="placeholder" selected disabled value="">Select type of chest pain</option>
+                        <option value="typical angina">
+                            typical angina
+                        </option>
+                        <option value="atypical angina">
+                            atypical angina
+                        </option>
+                        <option value="non-anginal pain">
+                            non-anginal pain
+                        </option>
+                        <option value="asymptomatic">
+                            asymptomatic
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label"> BP</label>
+                    <input class="from-control" type="number" name="BP"
+                    placeholder=" Enter BP value"  min="0" max="500" />
+                </div>
+                <div class="mb-3"><br>
+
+                    <label calss="from-control">Cholesterol</label>
+                    <input class="from-control" type="number" name="Cholesterol"
+                    placeholder="Enter Cholesterol value" min="0" max="1000" />
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-control">FBS Over 120</label>
+                    <select class="from-label" name="FBS_over_120" placeholder="Choose whether FBS is over 120 or not" required>
+                        <option class="placeholder" selected disabled value=""> select FBS value</option>
+                        <option value="flase">
+                            flase
+                        </option>
+                        <option value="True">
+                            True
+                        </option>
+
+                    </select>
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-control">EKG Results</label>
+                    <select class="from-label" name="EKG_results" placeholder="Choose EKG result type" required>
+                        <option class="placeholder" selected disabled value=""> select EKG result type</option>
+                        <option value="normal">
+                            normal
+                        </option>
+                        <option value="having ST-T wave abnormality">
+                            having ST-T wave abnormality
+                        </option>
+                        <option value="left ventricular hyperthrophy">
+                            left ventricular hyperthrophy
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-control">Max HR</label>
+                    <input class="from-control" type="number" name="Max_HR"
+                    placeholder="Enter your HR value" min="0" max="500"/>
+
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">Exercise Angina</label>
+                    <select class="from-control" name="Exercise_angina" placeholder=" Choose Exercise angina" required>
+                        <option class="placeholder" selected disabled value="">Select Exercise angina</option>
+                        <option value="no">
+                            no
+                        </option>
+                        <option value="yes">
+                            yes
+                        </option>
+                    </select>
+
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">ST Depression</label>
+                    <input class="from-control" type="number" name="ST_depression"
+                    placeholder="Enter ST depression" min="0" max="100" step="0.1" />
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">Slope_of_ST</label>
+                    <select class="placeholder" name="Slope_of_ST" placeholder=" choose your Slope of ST" required>
+                        <option class="placeholder" selected disabled value=""> select Slope of ST</option>
+                        <option value="upsloping">
+                            upsloping
+                        </option>
+                        <option value="flat">
+                            flat
+                        </option>
+                        <option value="downsloping">
+                            downsloping
+                        </option>
+                    </select>
+
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">Number of vessels fluro</label>
+                    <input class="from-control" type="number" name="Number_of_vessels_fluro"
+                    placeholder="Choose Number of vessels fluro" min="0" max="3" />
+                </div>
+                <div class="mb-3"><br>
+                    <label class="from-label">Thallium</label>
+                    <select class="from-control" name="Thallium" placeholder="Choose thalassemia type" required>
+                        <option class="placeholder" selected disabled value=""> select Thalassemia</option>
+                        <option value="normal">
+                            normal
+                        </option>
+                        <option value="fixed defect">
+                            fixed defect
+                        </option>
+                        <option value="reversible defect">
+                            reversible defect
+                        </option>
+
+                    </select>
+
+                </div>
+                <div class="mb-3"><br>
+                    <input class="btn btn-primary" type="submit" value="Predict Heart Disease" required />
+                </div>
+        </form>
+        <h2>
+           Heart Disease Risk: {{results}}
+        </h2>
+    </body>
+</html>

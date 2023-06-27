@@ -1,0 +1,10 @@
+numpy
+seaborn
+pymongo
+pandas
+scikit-learn
+flask
+certifi
+os-sys
+drill
+-e .
